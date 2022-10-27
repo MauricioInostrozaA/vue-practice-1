@@ -1,29 +1,27 @@
 <template>
-    <header>
-        <img 
-            @click="reload"
-            src="@/assets/cashflow-icon.svg" 
-            alt="Logo"
-        />
-        <h1><span>Cash</span>Flow</h1>
-        <span></span>
-    </header>
+  <header>
+      <img
+          @click="reload"
+          src="@/assets/cashflow-icon.svg"
+          alt="Logo"
+      />
+      <h1><span>Cash</span>Flow</h1>
+      <span></span>
+  </header>
 </template>
 
 <script>
-export default{
-    methods:{
-        reload(){
+export default {
+    methods: {
+        reload() {
             location.reload();
         }
     },
-
-}
-
+};
 </script>
 
 <style scoped>
-.header {
+header {
   display: flex;
   justify-content: space-around;
   align-items: center;

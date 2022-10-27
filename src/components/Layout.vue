@@ -1,20 +1,20 @@
 <template>
 <div class="header">
-    <slot name="header"></slot>   
+  <slot name="header"></slot>   
 </div>
-<div class="header">
-    <slot name="resume"></slot>
+
+<div class="resume">
+  <slot name="resume"></slot>
 </div>
+
 <div class ="movements">
-   <div class="head" @click="showMovements =! showMovements">
-        <div class="grip"></div>
-   </div>
-   <div class="body" v-show="showMovements">
-        <slot name="movements"></slot>
-   </div>
-
+  <div class="head" @click="showMovements =! showMovements">
+    <div class="grip"></div>
+  </div>
+  <div class="body" v-show="showMovements">
+    <slot name="movements"></slot>
+  </div>
 </div>
-
 </template>
 
 <script setup>
