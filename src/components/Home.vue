@@ -30,7 +30,7 @@ import Layout from './Layout.vue';
 import Header from './Header.vue';
 import Resume from './Resume/Index.vue';
 import Movements from './Movements/Index.vue';
-import Action from './Action.vue';ç
+import Action from './Action.vue';
 import Graphic from './Resume/Graphic.vue';
 
 export default {
