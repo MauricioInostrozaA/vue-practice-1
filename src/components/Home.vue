@@ -46,49 +46,75 @@ export default {
         return{
             label: null,
             amount: null,
-            amounts: [100, 200, 500, 200, -400, 500, 0, -300, 600, 400, -100],
             movements: [{
                 id: 0,
                 title: "Moviemiento 0",
                 description: "Descripcion 0",
-                amount: 10000,
+                amount: 0,
+                time: new Date("10-24-2022"),
             }, {
                 id: 1,
                 title: "Moviemiento 1",
                 description: "Descripcion 1",
-                amount: 10000,
+                amount: 2000,
+                time: new Date("10-25-2022"),
             }, {
                 id: 2,
                 title: "Moviemiento 2",
                 description: "Descripcion 2",
-                amount: 10000,
+                amount: 5000,
+                time: new Date("10-25-2022"),
             }, {
                 id: 3,
                 title: "Moviemiento 3",
                 description: "Descripcion 3",
-                amount: -10000,
+                amount: 2000,
+                time: new Date("10-25-2022"),
             }, {
                 id: 4,
                 title: "Moviemiento 4",
                 description: "Descripcion 4",
-                amount: 10000,
+                amount: -4000,
+                time: new Date("10-25-2022"),
             }, {
                 id: 5,
                 title: "Moviemiento 5",
                 description: "Descripcion 4",
-                amount: 10000,
+                amount: 5000,
+                time: new Date("10-27-2022"),
             }, {
                 id: 6,
                 title: "Moviemiento 6",
                 description: "Descripcion 4",
-                amount: 10000,
+                amount: 3000,
+                time: new Date("10-27-2022"),
             }, {
                 id: 7,
                 title: "Moviemiento 7",
                 description: "Descripcion 4",
-                amount: -10000,
+                amount: 1000,
+                time: new Date("11-3-2022"),
             }]
         }
-    }
+    },
+    computed: {
+        amounts() {
+            const lastDays = this.movements
+                .filter(m => {
+                    const today = new Date();
+                    const oldDate = today.setDate(today.getDate() - 30);
+
+                    return m.time > oldDate;
+                })
+                .map(m => m.amount)
+            return lastDays.map((m, i) => {
+                const lastMovements = lastDays.slice(0, i);
+
+                return lastMovements.reduce((suma, movement) => {
+                    return suma + movement
+                }, 0)
+            });
+        }
+    },
 }
 </script>
