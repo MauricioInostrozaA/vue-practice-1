@@ -18,7 +18,7 @@
                 <div class="field">
                     <label>Tipo de Movimiento</label>
                     <label class="radio-label">
-                        <input type="radio" value="ingreso" v-model="movementType"/>
+                        <input type="radio" value="Ingreso" v-model="movementType"/>
                         <span>Ingreso</span>
                     </label>
                     <label class="radio-label">
