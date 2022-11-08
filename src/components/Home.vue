@@ -98,7 +98,6 @@ export default {
             localStorage.setItem('movements', JSON.stringify(this.movements));
         },
         select(el) {
-            console.log(el);
             this.amount = el;
         }
     }
